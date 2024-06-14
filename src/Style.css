@@ -1,0 +1,75 @@
+body {
+  background: #282c34;
+}
+
+.App {
+  margin: auto;
+  border-radius: 1vh;
+  display: flex;
+  flex-flow: column;
+  background: #61dafb;
+  min-width: 600px;
+  max-width: 20vw;
+  height: 60vh;
+}
+
+.inputField {
+  margin: 3%;
+  padding: 1vh;
+  background: white;
+  height: 10%;
+}
+.inputField__inputContent {
+  overflow: hidden;
+  user-select: none;
+  font-size: 5vh;
+  font-family: sans-serif;
+  text-align: end;
+}
+
+.buttonsArea {
+  width: 95%;
+  margin: auto auto 3%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2%;
+}
+
+.baseButton {
+  border-radius: 15px;
+  border-color: deepskyblue;
+  background: white;
+  font-size: 2.5vw;
+  font-family: sans-serif;
+  user-select: none;
+}
+.baseButton:nth-child(1) {
+  grid-column: span 2;
+}
+.baseButton:nth-last-child(3) {
+  grid-column: span 2;
+}
+.baseButton:nth-last-child(1) {
+  background: orange;
+}
+.baseButton__operation {
+  color: cadetblue;
+}
+.baseButton__digit {
+  color: #282c34;
+}
+.baseButton__specialButton {
+  color: #282c34;
+}
+
+.baseButton:hover {
+  background: #e8faff;
+}
+
+.baseButton:active {
+  background: #99e9ff;
+  border-color: #282c34;
+}
+
+/*# sourceMappingURL=Style.css.map */

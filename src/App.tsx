@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Qsc from "./components/myDisplay";
+import Pad from "./components/Pad";
+import "./Style.css"
+import { useUnit } from "effector-react";
+import {
+  $userInput,
+  onAllClearButtonClick,
+  onClearEntryButtonClick,
+  onDigitButtonClick, onEqualButtonClick,
+  onOperatorButtonClick, onPointButtonClick,
+} from "./store/model";
+
 
 function App() {
+
+  const [userInput, AllClear, ClearEntry, DigitButton, OperatorButton, EqualButton, PointButton] = useUnit([
+    $userInput,
+    onAllClearButtonClick, onClearEntryButtonClick,
+    onDigitButtonClick, onOperatorButtonClick,
+    onEqualButtonClick, onPointButtonClick
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Qsc value={ userInput } />
+      <Pad
+        onAllClearButtonClick={ AllClear }
+        onClearEntryButtonClick={ ClearEntry }
+        onDigitButtonClick={ DigitButton }
+        onOperatorButtonClick={ OperatorButton }
+        onEqualButtonClick={ EqualButton }
+        onPointButtonClick={ PointButton }
+      />
     </div>
   );
 }
